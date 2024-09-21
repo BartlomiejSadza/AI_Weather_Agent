@@ -1,9 +1,10 @@
 import OpenAI from "openai"
 import { getCurrentWeather, getLocation, functions } from "./tools.js"
 import { renderNewMessage } from "./dom.js"
+import {token_github} from "./keys.js";
 
 
-const token = "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";
+const token = token_github;
 const endpoint = "https://models.inference.ai.azure.com";
 export const openai = new OpenAI({
     baseURL: endpoint,
@@ -36,7 +37,7 @@ async function agent(query) {
     renderNewMessage(query, "user")
 
     const runner = openai.beta.chat.completions.runFunctions({
-        model: "gpt-4o-mini",
+        model: "gpt-4o",
         messages,
         functions
     }).on("message", (message) => console.log(message))

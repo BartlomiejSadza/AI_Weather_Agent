@@ -1,6 +1,8 @@
+import { weather } from "./keys";
+
 export async function getCurrentWeather({ location }) {
     try {
-        const weatherUrl = new URL("http://api.openweathermap.org/data/2.5/forecast?q[location]=Kielce&appid=078039429123e11aefe7e8215a938288");
+        const weatherUrl = new URL(`http://api.openweathermap.org/data/2.5/forecast?q[location]=${location}&appid=${weather}`);
         weatherUrl.searchParams.append("q", location)
         weatherUrl.searchParams.append("units", "imperial")
         const res = await fetch(weatherUrl)
