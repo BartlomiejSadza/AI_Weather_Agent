@@ -1,0 +1,16 @@
+{
+  "name": "Scrim-s02ih332ro",
+  "description": "https://v2.scrimba.com/learn-ai-agents-c034/~0p",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "openai": "latest",
+    "vite": "latest"
+  },
+  "devDependencies": {}
+}
